@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;800;900&family=Poppins:wght@300;400;500;600&display=swap');
 
 @keyframes fadeIn {
@@ -380,8 +381,6 @@ section {
     background-color: black;
     border-radius: 15px;
     margin-right: 40px;
-    transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
-    animation-duration: 1.5s;
 }
 
 .skill img {
@@ -399,11 +398,6 @@ section {
     color: white;
 }
 
-/* Add hover effect to skill boxes */
-.skill:hover {
-    transform: scale(1.1);
-    transition: transform 0.5s ease-in-out;
-}
 
 .portfolio {
     text-align: center;
@@ -781,6 +775,19 @@ footer {
 }
 
 @media (max-width: 480px) {
+    html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
     #menu-icon {
         display: block;
     }
@@ -790,10 +797,13 @@ footer {
         top: -1000px;
         right: 0;
         left: 0;
+        width: 100vw; /* Use full viewport width */
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         background: var(--bg-color);
-        text-align: left;
+        text-align: center;
         transition: all .45s ease;
     }
 
@@ -809,11 +819,77 @@ footer {
         color: var(--main-color);
     }
 
-    navlist a.active {
+    .navlist a.active {
         color: var(--text-color);
     }
 
     .navlist.open {
         top: 100%;
+    }
+
+    .home-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+        width: 100%; /* Full width */
+    }
+
+    .home-text h1, .home-text h2, .home-text p {
+        text-align: center;
+    }
+
+    .about-content, .experience-content, .portfolio-content, .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%; /* Full width */
+    }
+
+    .skills-content{
+        display: flex;
+        justify-content: space-around; /* Adjust as needed */
+        align-items: center;
+        flex-wrap: wrap; /* Enable wrapping to create new lines */
+    }
+
+    .about-img img, .skill, .row, .contact-icons, .contact-text {
+        margin: 0 auto;
+        margin-bottom: 15px;
+        width: 100%; /* Full width */
+    }
+
+    .skill img {
+        width: 150px;
+        height: 150px;
+        object-fit:fill;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        
+    }
+
+    .skills-container{
+        margin: 0 auto;
+        margin-bottom: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+    }
+
+    .layer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%; /* Full width */
+    }
+
+    .container {
+        width: 100%; /* Full width */
     }
 }

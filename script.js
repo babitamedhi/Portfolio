@@ -8,11 +8,39 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize index to 0
     let index = 0;
 
-    // Update text every 2000 milliseconds (2 seconds)
-    setInterval(function () {
-        changingText.textContent = phrases[index];
-        index = (index + 1) % phrases.length;
-    }, 2000); // Change this value to set the interval
+    // Function to simulate typing effect
+    function typeEffect() {
+        const currentPhrase = phrases[index];
+        const length = currentPhrase.length;
+        let i = 0;
+        const interval = setInterval(function () {
+            changingText.textContent += currentPhrase[i];
+            i++;
+            if (i > length - 1) {
+                clearInterval(interval);
+                setTimeout(eraseEffect, 1000); // Wait 1 second before erasing
+            }
+        }, 150); // Adjust typing speed here
+    }
+
+    // Function to simulate erasing effect
+    function eraseEffect() {
+        const currentText = changingText.textContent;
+        const length = currentText.length;
+        let i = length - 1;
+        const interval = setInterval(function () {
+            changingText.textContent = currentText.substring(0, i);
+            i--;
+            if (i < 0) {
+                clearInterval(interval);
+                index = (index + 1) % phrases.length;
+                setTimeout(typeEffect, 500); // Wait half a second before typing again
+            }
+        }, 50); // Adjust erasing speed here
+    }
+
+    // Initial call to start typing effect
+    typeEffect();
 
     // Add fade-in animation to skills images when they come into view
     const skills = document.querySelectorAll('.skill img');
@@ -81,26 +109,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Call the function initially and on scroll
     checkActiveSection();
     window.addEventListener('scroll', checkActiveSection);
-});
-
-// const animationPath = 'img/Animation - 1704391965203.json';
-
-//     // Set up the Lottie animation
-//     const animationContainer = document.getElementById('lottie-container');
-//     const animationData = {
-//        container: animationContainer,
-//        renderer: 'svg', // Choose the renderer (svg, canvas, html)
-//        loop: true, // Set to true for an infinite loop
-//        autoplay: true, // Set to true to play the animation automatically
-//        path: animationPath,
-//     };
- 
-//     // Load and play the Lottie animation
-//     const animation = lottie.loadAnimation(animationData);
 
     // JavaScript to toggle the navigation menu
-document.getElementById('menu-icon').addEventListener('click', function () {
-    var navlist = document.querySelector('.navlist');
-    navlist.style.display = navlist.style.display === 'flex' ? 'none' : 'flex';
-  });
-  
+    document.getElementById('menu-icon').addEventListener('click', function () {
+        var navlist = document.querySelector('.navlist');
+        navlist.style.display = navlist.style.display === 'flex' ? 'none' : 'flex';
+    });
+});
