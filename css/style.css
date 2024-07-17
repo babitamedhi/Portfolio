@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;800;900&family=Poppins:wght@300;400;500;600&display=swap');
 
 @keyframes fadeIn {
@@ -39,6 +38,8 @@ body {
     background-color: black;
     background-size: cover;
     opacity: 0;
+    width: 100%;
+    overflow-x: hidden;
     animation: fadeIn 1.5s ease-out forwards;
 }
 
@@ -114,18 +115,13 @@ section {
 }
 
 .home {
-    position: relative;
-    height: 101vh;
-    width: 100%;
-    background-size: contain;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
-    padding: 10%;
-    margin-top: 0;
-    margin-bottom: 70px;
-    background-image: url('../img/R (1).png');
-    background-size: cover;
-    min-height: 100vh;
+    background: url('../img/R\ \(1\).png') no-repeat center center/cover;
+    position: relative;
+    padding-left: 4%;
 }
 
 .text-content {
@@ -159,10 +155,9 @@ section {
 }
 
 #lottie-container {
-    width: 460px; /* Set the width of the container */
+    width: 500px; /* Set the width of the container */
     height: 460px; /* Set the height of the container */
-    float: right;
-    
+    float: right;  
 }
 
 .home-text h1,
@@ -188,6 +183,11 @@ section {
     font-weight: 700;
     color: #8a2be2;
     margin: 0%;
+}
+
+.home-text{
+    margin: 0;
+    padding: 0;
 }
 
 .slide {
@@ -281,7 +281,7 @@ section {
 
 .section-container {
     gap: 4rem;
-    height: 40%;
+    height: 30%;
 }
 
 .experience {
@@ -289,20 +289,22 @@ section {
 }
 
 .experience-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    align-items: center;
-    gap: 2.5rem;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
     margin-top: 60px;
 }
 
 .box {
-    background: var(--bg-color);
+    flex: 1; /* Allow boxes to grow equally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 300px; /* Set a minimum height for uniformity */
     background-color: #080909;
-    padding: 35px 45px;
+    padding: 20px;
     border-radius: 8px;
-    transition: all 0.45s ease;
-    height: 500px;
+    text-align: center;
     box-shadow: 0 2px 2px 4px #8a2be2;
 }
 
@@ -323,6 +325,7 @@ section {
     font-size: 1rem;
     line-height: 1.8;
     margin-bottom: 25px;
+    max-height: max-content;
 }
 
 .box:hover {
@@ -340,6 +343,7 @@ section {
     background-color: white;
     color: #8a2be2;
 }
+
 .company-name {
     font-weight: bold;
     color: #bd77ff; /* Purple for company name */
@@ -405,9 +409,10 @@ section {
 }
 
 .portfolio-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    display: flex;
+    flex: 1;
     align-items: center;
+    justify-content: space-around;
     gap: 2.5rem;
     margin-top: 5rem;
 }
@@ -580,6 +585,50 @@ footer {
 
 /* Media query for responsiveness - adjust as needed */
 @media (max-width: 600px) {
+    html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .home {
+        background-size: contain;
+        padding-left: 20px;
+    }
+
+    .slide{
+        margin: 5px;
+    }
+    .slide span.one,.slide span.two {
+        font-size: 20px;
+    }
+
+    .changing-text{
+        font-size: 20px;
+    }
+
+    .home-text h1 h2{
+        font-size: 10px;
+    }
+
+    .home-text p {
+        font-size: 10px;
+        padding-bottom: 20px;
+        margin: 0;
+    }
+    #lottie-container {
+        width:45%; /* Set the width of the container */
+        height: 300px; /* Set the height of the container */ 
+        float: right;       
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
     .skills-content {
         flex-direction: column; /* Change to a column layout on smaller screens */
     }
@@ -721,7 +770,7 @@ footer {
         align-items: center;
         justify-content: center;
         border-radius: 8px;
-        margin-right: 15px;
+        margin-right: 10px;
         transition: all .45s ease;
     }
 
@@ -753,9 +802,9 @@ footer {
         font-size: 2.5rem;
     }
 
-    .home {
+    /* .home {
         height: 87vh;
-    }
+    } */
 }
 
 @media (max-width: 920) {
@@ -772,6 +821,25 @@ footer {
     .contact {
         grid-template-columns: 1fr;
     }
+
+    html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%; /* Full width */
+    }
+
+    
 }
 
 @media (max-width: 480px) {
@@ -827,18 +895,50 @@ footer {
         top: 100%;
     }
 
-    .home-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .home {
+        background-size: contain;
         justify-content: center;
-        text-align: center;
-        height: 100vh;
-        width: 100%; /* Full width */
+        align-items: center;
     }
 
-    .home-text h1, .home-text h2, .home-text p {
-        text-align: center;
+    .home-text{
+        margin-top: -90px;
+    }
+
+    .slide{
+        margin: 5px;
+    }
+    .slide span.one,.slide span.two {
+        font-size: 10px;
+    }
+
+    .changing-text{
+        font-size: 15px;
+    }
+
+    .home-text h1 h2{
+        font-size: 10px;
+    }
+
+    .home-text p {
+        font-size: 10px;
+        padding-bottom: 20px;
+        margin: 0;
+    }
+
+    .btn {
+        padding: 5px;
+        font-size: 10px;
+        font-weight: 500;
+    }
+    span{
+        padding: 1px;
+    }
+
+    #lottie-container {
+        width: 45%; /* Set the width of the container */
+        height: 300px; /* Set the height of the container */ 
+        float: right;       
     }
 
     .about-content, .experience-content, .portfolio-content, .contact {
@@ -878,6 +978,7 @@ footer {
         display: flex;
         flex-wrap: wrap;
         width: 90%;
+        margin-top: 60px;
     }
 
     .layer {
