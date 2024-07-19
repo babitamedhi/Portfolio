@@ -116,3 +116,4 @@ document.addEventListener("DOMContentLoaded", function () {
         navlist.style.display = navlist.style.display === 'flex' ? 'none' : 'flex';
     });
 });
+
