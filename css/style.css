@@ -72,7 +72,7 @@ header {
 }
 
 .navlist {
-    display: flex;
+    display: none;
     align-items: center;
 }
 
@@ -96,7 +96,7 @@ header {
     padding: 8px 16px;
 }
 
-.menu-icon {
+menu-icon {
     display: none;
     background: none;
     border: none;
