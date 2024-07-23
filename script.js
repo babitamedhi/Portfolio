@@ -111,9 +111,11 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', checkActiveSection);
 
     // JavaScript to toggle the navigation menu
-    document.getElementById('menu-icon').addEventListener('click', function () {
-        var navlist = document.querySelector('.navlist');
-        navlist.style.display = navlist.style.display === 'flex' ? 'none' : 'flex';
+    const menuIcon = document.getElementById('menu-icon');
+    const navList = document.querySelector('.navlist');
+
+    menuIcon.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        console.log('Menu icon clicked'); // Debugging
     });
 });
-
