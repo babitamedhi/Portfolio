@@ -209,7 +209,7 @@ section {
 
 .btn {
     display: inline-block;
-    padding: 10px;
+    padding: 5px;
     background: linear-gradient(to right,#350f57, #8a2be2, #350f57);
     border-radius: 5px;
     color: var(--text-color);
@@ -218,6 +218,7 @@ section {
     font-weight: 500;
     transition: all 0.45s ease;
     margin-right: 22px;
+    text-align: center;
 }
 
 .btn:hover {
@@ -872,10 +873,15 @@ footer {
     }
 
     .slide{
-        margin: 5px;
+        margin-top: 20px;
     }
     .slide span.one,.slide span.two {
         font-size: 10px;
+    }
+
+    .one{
+        line-height: 20px;
+        padding: 0 10px;
     }
 
     .changing-text{
@@ -893,7 +899,7 @@ footer {
     }
 
     .btn {
-        padding: 5px;
+        padding: 2px;
         width: 40%;
         font-size: 10px;
         font-weight: 500;
