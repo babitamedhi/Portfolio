@@ -818,7 +818,7 @@ footer {
     }
 
     .navlist {
-        display: flex;
+        display: none; /* Hide by default */
         flex-direction: column;
         position: absolute;
         top: 60px;
@@ -832,7 +832,7 @@ footer {
     }
 
     .navlist.active {
-        display: none;
+        display: flex; /* Show when active */
     }
 
     #menu-icon {
@@ -841,7 +841,7 @@ footer {
 
     .navlist a {
         display: block;
-        margin: 17px;
+        margin: 7px;
         font-size: 20px;
         transition: all .45s ease;
         color: var(--text-color);
