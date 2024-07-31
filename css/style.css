@@ -477,7 +477,7 @@ section {
     color: var(--main-color);
     margin-top: 20px;
     font-size: 20px;
-    background: white;
+    background: rgb(255, 255, 255);
     width: 60px;
     height: 60px;
     display: flex;
@@ -485,15 +485,24 @@ section {
     justify-content: center;
     border-radius: 50%;
   }
-  
+
+  .layer p {
+    color: #fdfdfd;
+    font-weight: 900;
+  }
+
   .layer h2 {
     font-size: 25px;
     font-weight: 800;
     margin-bottom: 15px;
-    color: #8508b7;
+    color: #fcfcfc;
     padding: auto;
     font-family: 'Pacifico', cursive;
     text-decoration: underline;
+  }
+
+  .code-link{
+    background-color: #ffffff;
   }
   
   .row:hover .layer {
@@ -873,7 +882,7 @@ footer {
     }
 
     .slide{
-        margin-top: 20px;
+        margin: 5px;
     }
     .slide span.one,.slide span.two {
         font-size: 10px;
@@ -881,7 +890,6 @@ footer {
 
     .one{
         line-height: 20px;
-        padding: 0 10px;
     }
 
     .changing-text{
